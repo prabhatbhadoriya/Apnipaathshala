@@ -40,5 +40,6 @@ This platform is fairly simple yet provides most of the necessary features requi
 *  git status ( # This is for Check your File Update Status file is updated or pending for updation )
 * git add -A  ( # This is for  update all you files is ready for commit )
 
+* git commit (# Press "i" and then Type "Initial commit" and then Press "ESC :wq Enter" your Done  
 
 
