@@ -1,0 +1,79 @@
+{% extends 'assignments/assignment_base.html' %}
+{% load bootstrap4 %}
+
+{% block title_name %}
+    LMS - {{assignment.assignment_name}}
+{% endblock title_name %}
+    
+
+{% block main_content %}
+    <div class="container">
+    <div class="alert alert-success my-4 " style="border-radius: 15px 50px 30px;">
+        <h1><b>{{assignment.assignment_name}}</b></h1>
+        <h4>Course: {{assignment.course}}</h4>
+        <h6 class="text-primary">Start Date: {{assignment.start_date}}</h6>
+        <h6 class="text-primary">Due Date: {{assignment.due_date}}</h6>
+        </div>
+        <div class="h-auto p-5 text-white bg-dark " style="border-radius: 15px 50px 30px;">
+        <p>Description: {{assignment.assignment_description}}</p>
+        {% if user.user_type == 2 %}
+            <a href="{% url 'assignments:update' pk=assignment.pk %}" class="btn btn-warning btn-lg">Update</a>
+            <a href="{% url 'assignments:delete' pk=assignment.pk %}" class="btn btn-danger btn-lg">Delete</a>
+
+            <div class="submissions">
+            <h3>Submissions</h3>
+            
+            {% for submissions in submitted %}
+                <a href="{% url 'assignments:submit_detail' pk=submissions.pk %}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{submissions.topic}}</h5>
+                    <small>{{submissions.author}}</small>
+                    </div>
+                    <p class="mb-1">
+                    {{submissions.description}}
+                    </p>
+                    <small>Start Date: {{submissions.submitted_date}}</small><br>
+                </a>
+            {% empty %}
+                <h6>No Submissions</h6>
+            {% endfor %}
+            </div>
+                
+
+        {% else %}            
+            {% if assignment.course in course %}
+                {% if duedate >= time %}
+                    <a href="{% url 'assignments:submit' %}" class="btn btn-success btn-lg" style="border-radius: 15px 50px 30px;">Submit Assignment</a>
+                {% endif %}
+                <div class="submissions" style="border-radius: 15px 50px 30px;">
+                <h3>My Submissions:</h3>
+                
+                {% for submissions in submitted %}
+                    {% if submissions.author.id == user.id %}
+                    <div class="alert alert-primary" role="alert" style="border-radius: 15px 50px 30px;">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{submissions.topic}}</h5>
+                            <small>{{submissions.author}}</small>
+                            </div>
+                            <p class="mb-1">
+                            {{submissions.description}}
+                            </p>
+                            <small>Start Date: {{submissions.submitted_date}}</small><br>
+                        </a>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+            
+                            <a class="btn btn-lg btn-primary" href="{% url 'assignments:submit_detail' pk=submissions.pk %}" role="button" style="border-radius: 30px;">View details »</a>
+                          </div>
+                    {% endif %}
+                {% empty %}
+                    <h6>No Submissions</h6>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+    </div>
+{% endblock main_content %}
+    

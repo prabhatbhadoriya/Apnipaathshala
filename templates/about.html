@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} About{% endblock title %}
+{% block aboutactive %} active {% endblock aboutactive %}
+
+{% block css %}     
+   {% endblock %}
+{% block body_content %} 
+{% comment %} <h1>This is about page</h1> {% endcomment %}
+
+<main role="main">
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Welcome to ApniPaathshala!</h1>
+            
+            <p>Education has the power to transform our world, our lives, our community our families and more importantly our lives.</p>
+            <p>In ApniPaathshala we believe that, no matter who you are or where you are, everyone in the world is entitled to a free education of best quality. So here we are to provide a platform connecting teachers and students. </p>
+            <p>Teachers who are willing to give free education to a underprivileged students join our website and provide study material and different type of activity. This help a students to get all the study material at one place and have a focused study. </p>
+            
+
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+        </div>
+    </div>
+ 
+        
+ 
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    {% comment %} <div class="row "> {% endcomment %}
+    <br>
+    <div class="container my-3">
+    <h1><b>Team Members</b> </h1>
+    </div>
+    <br>
+    <div class="row">
+
+      <div class="col-lg-3">
+        <div>
+        <img src="{% static 'django_lms/images/learning.jpg' %}" class="rounded-circle" alt="Cinque Terre" width="240" height="230">
+        </div><br>
+
+        <h2><b>Prabhat Singh</b></h2>
+        <p><b>Full Stack Developer - PRABHAT </b><br> Works as a Full Stack Developer with both the front and back ends of Apnipaatshala website project. </p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <div class="col-lg-3">
+      <div>
+        <img src="{% static 'django_lms/images/Rahul.jpeg' %}" class="rounded-circle" alt="Cinque Terre" width="240" height="230">
+      </div><br>
+
+        <h2><b>Rahul Gupta</b> </h2>
+        <p><b>Frontend Developer - RAHUL </b> <br> Works as a Frontend Developer with the front ends of Apnipaatshala website project.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      
+
+      <div class="col-lg-3">
+      <div class="container">
+      <div>
+      <img src="{% static 'django_lms/images/anna.jpeg' %}" class="rounded-circle" alt="Cinque Terre" width="240" height="230">
+      </div><br>
+      </div>
+
+        <h2><b>Anna Gopali</b> </h2>
+        <p><b>Backend Developer - Anna   </b>  Works as a Backend Developer with the front ends of Apnipaatshala website project.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      
+
+      <div class="col-lg-3">
+      <div>
+      <img src="{% static 'django_lms/images/Himanshu.jpeg' %}" class="rounded-circle" alt="Cinque Terre" width="240" height="230">
+      </div><br>
+        
+
+        <h2><b>Himanshu Rajput</b> </h2>
+        <p><b>Frontend and GUI - HIMANSHU </b>Works as a Frontend Developer with the front ends and GUI of Apnipaatshala website project.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    <br>
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+    <div class="container my-3">
+    <h1><b>Core Features</b> </h1>
+    </div>
+    <br>
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading "><b>Facilitate Online Teaching Activities</b>  <br>
+        <span class="text-muted">It’ll blow your mind.</span></h2>
+        <br><br>
+        
+        
+
+        <ul data-v-ae62e536="" class="try-list"><li data-v-ae62e536="" class="try-list-item"><span data-v-ae62e536="" class="try-list-item-text"><b>Upload files such as PDF and videos to create online courses</b>  </span></li><li data-v-ae62e536="" class="try-list-item"><span data-v-ae62e536="" class="try-list-item-text"><b>Host live classes and webinars via ZOOM integration </b> </span></li><li data-v-ae62e536="" class="try-list-item"><span data-v-ae62e536="" class="try-list-item-text"><b>Give online tests and assignments and provide feedback </b> </span></li></ul>
+      </div>
+      <div class="col-md-5">
+        <img src="{% static 'django_lms/images/learning.jpg' %}" alt="My image">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+<br>
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading"><b>Easy to Use Features</b> <br> <span class="text-muted">Set up your online school easily without a technical background.</span></h2><br><br>
+        <p class="lead"></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{% static 'django_lms/images/children640.jpg' %}" alt="My image" width="450" height="350">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+<br>
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading"><b>All Free courses Available here</b> <br><span class="text-muted">Anyone can Teach Anyone can learn Free of cost.</span></h2>
+        <p class="lead"></p>
+      </div>
+      <div class="col-md-5">
+        <img src="{% static 'django_lms/images/take640.jpg' %}" alt="My image" width="450" height="350">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <br>
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+</main>
+<script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+{% endblock %}

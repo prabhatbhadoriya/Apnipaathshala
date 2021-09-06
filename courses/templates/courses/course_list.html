@@ -1,0 +1,62 @@
+{% extends 'courses/course_base.html' %}
+
+{% block title_name %}
+ApniPaathshala - Courses
+{% endblock title_name %}
+{% block courseactive %} active {% endblock courseactive %}
+
+{% block main_content %}
+
+<div class="container my-4">
+  <div>
+    <h1><b>All Courses</b></h1>
+
+    {% if user.user_type == 2 %}
+    <a href="{% url 'courses:create' %}" class="btn btn-lg btn-fill btn-success button-stretch">
+      <i class="fa fa-plus-circle" aria-hidden="true"> Create New Course</i>
+    </a>
+    {% endif %}
+
+<!-- All Courses  -->
+  </div>
+
+  <div class="card-deck">
+    {% for course_item in object_list %}
+    <div>
+      <div class="card" style="width: 20rem; height: 350px;">
+        <div class="card-body">
+          <div class="alert alert-success">
+
+            <h5 class="card-title"><b>{{course_item.course_name}}</b></h5>
+            <footer class="blockquote-footer text-right">Posted by: <cite title="Source Title"><b>{{course_item.teacher}}</b></cite></footer>
+            <!-- <h6 class="card-subtitle mb-2 text-muted">{{course_item.teacher}}</h6> -->
+          </div>
+          <p class="card-text">
+            {{course_item.course_description | truncatechars:100}}
+          </p>
+          <br>
+          <br>
+          <a href="{% url 'courses:detail' pk=course_item.pk %}" class="btn btn-primary card-link ">More Info</a>
+          
+          {% if user.user_type == 1 %}
+          {%if user in course_item.students.all%}
+          <a href="{% url 'courses:unenroll' pk=course_item.pk %}" class="btn btn-danger card-link">Unenroll</a>
+          {% else %}
+          <a href="{% url 'courses:enroll' pk=course_item.pk %}" class="btn btn-success card-link">Enroll</a>
+          
+          {% endif %}
+          {% endif %}
+
+          <p class="mb-3">{{course_item.students.count}}
+            member{{course_item.students.count|pluralize}}</p>
+
+
+        </div>
+      </div>
+      <br>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock main_content %}
+</div>
