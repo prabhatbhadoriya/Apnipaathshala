@@ -15,19 +15,19 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Raleway&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'django_lms/css/master.css' %}" />
 </head>
-<body >
-<div class="img-thumbnail"><img src="{% static 'django_lms/images/l2.png' %}" alt="" class="img-fluid" width="250" ></div>
-            </div>
+<body class="img-fluid" style="background-image: url('{% static 'django_lms/images/R.jpg' %}');">
 
-    <div   >
+        
+
+    <div class=""><img src="{% static 'django_lms/images/l2.png' %}" alt="" class="" width="250">
     
-        <div class="container py-5">
+        <div class="container py-5" >
        
 
             <div class="row align-items-center py-5 ">
             <div class="col-lg-6 ">
                 <h1 class="display-4">ApniPaathshala! Learning Management System</h1>
-                <p class="lead text-muted mb-0">Your one-stop solution to online learning.</p>
+                <p class="lead text-strong mb-0">Your one-stop solution to online learning.</p>
                 <p><a href="{% url 'courses:list' %}" class="btn btn-primary btn-lg index-button">View All Courses</button></a>
             </div>
             

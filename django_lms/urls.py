@@ -48,6 +48,9 @@ urlpatterns = [
     
     url(r'^assignments/', include('assignments.urls', namespace='assignments')),
     url(r'^resources/', include('resources.urls', namespace="resources")),
+
+   
+
     url(r'^user_profile/(?P<pk>[-\w]+)/$',
         project_views.UserProfile.as_view(), name="profile"),
     url(r'^mycourse/(?P<pk>[-\w]+)/$',
